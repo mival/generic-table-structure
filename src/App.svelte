@@ -1,12 +1,16 @@
 <script>
   import Grid from "./Grid.svelte";
   import Table from "./Table.svelte";
+
+	export let albums = [], posts = [];
+
+
   const loadData = async () => {
     const response = await fetch(
       "https://jsonplaceholder.typicode.com/posts?userId=1"
     );
     if (response.ok) {
-      data = await response.json();
+      posts = await response.json();
     } else {
       const errorText = await response.text();
       throw Error(errorText);
@@ -15,9 +19,21 @@
 
   loadData();
 
-	export let data = [];
+  const loadAlbums = async () => {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/albums?userId=1"
+    );
+    if (response.ok) {
+      albums = await response.json();
+    } else {
+      const errorText = await response.text();
+      throw Error(errorText);
+    }
+  };
 
-	export const columns = [
+  loadAlbums();
+
+	export const postColumns = [
     {
       header: "",
       content: row => (`<a href="/post/${row.id}">Detail</a>`)
@@ -34,6 +50,21 @@
       header: "Body",
       content: row => (`<span class="ellipsis" title="${row.body}">${row.body}</span>`)
     },
+  ];
+
+  export const albumColumns = [
+    {
+      header: "",
+      content: row => (`<a href="/album/${row.id}">Detail</a>`)
+    },
+    {
+      header: "ID",
+      key: "id",
+    },
+    {
+      header: "Titulek",
+      key: "title",
+    }
 	];
 
 	export const itemConfig = [
@@ -56,6 +87,10 @@
 </style>
 
 <h2>Tabulka</h2>
-<Table rows={data} columns={columns} />
+<Table rows={posts} columns={postColumns} />
+-----------------------
+<Table rows={albums} columns={albumColumns} />
+
 <h2>Grid</h2>
-<Grid items={data} itemConfig={itemConfig}/>
+<Grid items={posts} itemConfig={itemConfig}/>
+
