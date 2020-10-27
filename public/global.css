@@ -1,5 +1,10 @@
+.table-wrapper {
+  margin: 10px;
+}
+
 .grid {
   display: grid;
+  margin: 10px;
   grid-gap: 10px;
 }
 

@@ -1,5 +1,5 @@
 <script>
-  export let htmlOptions, rowOptions = {};
+  export let htmlOptions = {}, rowOptions = {};
   export let columns = [];
 </script>
 

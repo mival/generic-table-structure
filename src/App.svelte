@@ -43,7 +43,7 @@
 		},
 		{
       header: "",
-      content: item => (`<a href="/post/${item.id}">Detail</a>`)
+      content: item => (`<a class="btn btn-primary" href="/post/${item.id}">Detail</a>`)
     }
   ];
 </script>
@@ -52,6 +52,10 @@
 </style>
 
 <h2>Tabulka</h2>
-<Table rows={data} columns={columns} />
+<div class="table-wrapper">
+	<div class="table-responsive">
+		<Table rows={data} columns={columns} htmlOptions = { {class: "table table-bordered table-hover"} }/>
+	</div>
+</div>
 <h2>Grid</h2>
 <Grid items={data} itemConfig={itemConfig}/>
