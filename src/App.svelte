@@ -87,9 +87,9 @@
 </style>
 
 <h2>Tabulka</h2>
-<Table rows={posts} columns={postColumns} />
+<Table rows={posts} columnConfig={postColumns} />
 -----------------------
-<Table rows={albums} columns={albumColumns} />
+<Table rows={albums} columnConfig={albumColumns} />
 
 <h2>Grid</h2>
 <Grid items={posts} itemConfig={itemConfig}/>

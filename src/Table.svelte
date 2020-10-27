@@ -7,11 +7,11 @@
 
 
 
-  export let columns,rows = [];
+  export let columnConfig,rows = [];
 </script>
 
 <table>
-  <THead {columns} htmlOptions={ {class: 't-body'} } />
-  <TBody {rows} {columns} htmlOptions={ {class: 't-body'} } rowOptions={ {class: 'tr'} } />
+  <THead {columnConfig} htmlOptions={ {class: 't-body'} } />
+  <TBody {rows} {columnConfig} htmlOptions={ {class: 't-body'} } rowOptions={ {class: 'tr'} } />
   <TFoot />
 </table>

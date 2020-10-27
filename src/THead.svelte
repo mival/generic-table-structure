@@ -1,7 +1,7 @@
 <script>
   export let htmlOptions = {},
     rowOptions = {};
-  export let columns = [];
+  export let columnConfig = [];
 </script>
 
 <style>
@@ -9,7 +9,7 @@
 
 <thead {...htmlOptions}>
   <tr {...rowOptions}>
-    {#each columns as column}
+    {#each columnConfig as column}
       <th>
         {#if column.header}
         <span

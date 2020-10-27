@@ -1,6 +1,6 @@
 <script>
   export let htmlOptions = {}, rowOptions = {};
-  export let columns = [];
+  export let columnConfig = [];
 </script>
 
 <style>
@@ -8,7 +8,7 @@
 
 <tfoot {...htmlOptions}>
   <tr {...rowOptions}>
-    {#each columns as column}
+    {#each columnConfig as column}
       <th>{column.header}</th>
     {/each}
   </tr>

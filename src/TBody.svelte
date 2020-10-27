@@ -1,6 +1,6 @@
 <script>
   export let htmlOptions = {}, rowOptions = {};
-  export let columns = [];
+  export let columnConfig = [];
   export let rows = [];
 </script>
 
@@ -10,7 +10,7 @@
 <tbody {...htmlOptions}>
   {#each rows as row}
     <tr {...rowOptions}>
-      {#each columns as column}
+      {#each columnConfig as column}
         {#if column.content}
           <td {...column.htmlOptions}>{@html column.content(row)}</td>
         {:else}
