@@ -30,6 +30,10 @@
       header: "Titulek",
       key: "title",
     },
+    {
+      header: "Body",
+      content: row => (`<span class="ellipsis" title="${row.body}">${row.body}</span>`)
+    },
 	];
 
 	export const itemConfig = [

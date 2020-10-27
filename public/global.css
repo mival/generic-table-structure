@@ -12,3 +12,11 @@
 .grid__item {
   border: 1px solid black;
 }
+
+.ellipsis {
+  display: inline-block;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  max-width: 50%;
+  white-space: nowrap;
+}
