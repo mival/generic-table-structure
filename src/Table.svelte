@@ -7,21 +7,7 @@
 
 
 
-  export let rows = [];
-  export const columns = [
-    {
-      header: "",
-      content: row => (`<a href="/post/${row.id}">Detail</a>`)
-    },
-    {
-      header: "ID",
-      key: "id",
-    },
-    {
-      header: "Titulek",
-      key: "title",
-    },
-  ];
+  export let columns,rows = [];
 </script>
 
 <table>
